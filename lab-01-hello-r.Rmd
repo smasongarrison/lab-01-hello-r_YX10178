@@ -1,7 +1,7 @@
 ---
 title: "Lab 01 - Hello R"
-author: "Insert your name here"
-date: "Insert date here"
+author: "Yuxin Xie"
+date: "1/22/2025"
 output: 
   html_document: 
     fig_height: 4
@@ -18,8 +18,15 @@ library(datasauRus)
 ## Exercises
 
 ### Exercise 1
+?datasaurus_dozen
 
-Remove this text, and add your answer for Exercise 1 here.
+#based on the help file, there are 
+
+datasaurus_dozen %>%
+  count(dataset) %>%
+  print(13)
+
+# ther are 13 rows and 2 columns in the dataset 
 
 ### Exercise 2
 
