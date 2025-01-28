@@ -390,9 +390,13 @@ linear relationship between x and y in star dataset</p>
 </div>
 <div id="exercise-4" class="section level3">
 <h3>Exercise 4</h3>
-<p>Add your code and narrative to complete this exercise. Use the
-conventions from the previous exercises to name your chunks and organize
-your work.</p>
+<p>circle_data &lt;- datasaurus_dozen %&gt;% filter(dataset ==
+“circle”)</p>
+<p>ggplot(data = circle_data, mapping = aes(x = x, y = y)) +
+geom_point()</p>
+<p>circle_data %&gt;% summarize(r = cor(x, y)) # r of the star dataset
+is -0.0683, |r| is larger than the r of dino. but still close to 0, no
+linear relationship between x and y in circle dataset</p>
 </div>
 <div id="exercise-5" class="section level3">
 <h3>Exercise 5</h3>

@@ -57,17 +57,19 @@ star_data %>%
   summarize(r = cor(x, y))
 # r of the star dataset is -0.0630, |r| is smaller than the r of dino. but still close to 0, no linear relationship between x and y in star dataset
 
+
 ### Exercise 4
+circle_data <- datasaurus_dozen %>%
+  filter(dataset == "circle")
 
-Add your code and narrative to complete this exercise. Use the conventions from the previous exercises to name your chunks and organize your work.
+ggplot(data = circle_data, mapping = aes(x = x, y = y)) +
+  geom_point()
 
-```{r}
+circle_data %>%
+  summarize(r = cor(x, y))
+# r of the star dataset is -0.0683, |r| is larger than the r of dino. but still close to 0, no linear relationship between x and y in circle dataset
 
-```
 
-```{r}
-
-```
 
 ### Exercise 5
 
