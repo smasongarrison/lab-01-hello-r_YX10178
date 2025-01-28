@@ -31,6 +31,7 @@ datasaurus_dozen %>%
   count(dataset) %>%
   print()
 
+
 ### Exercise 2 
 
 dino_data <- datasaurus_dozen %>%
@@ -42,24 +43,19 @@ ggplot(data = dino_data, mapping = aes(x = x, y = y)) +
 dino_data %>%
   summarize(r = cor(x, y))
 # r = -0.0645, which is close to 0. there is no linear relationship between x and y. 
+
+
 ### Exercise 3
 
-This is your turn to write the code and narrative for the star dataset. Follow the same steps as above to complete the analysis. Don't forget to label your chunks appropriately!
+star_data <- datasaurus_dozen %>%
+  filter(dataset == "star")
 
-Note that the R chunks are labeled with `plot-star` and `cor-star` to provide spaces to place the code for plotting and calculating the correlation coefficient.
-To finish, clean up the narrative by removing these instructions.
+ggplot(data = star_data, mapping = aes(x = x, y = y)) +
+  geom_point()
 
-```{r plot-star}
-
-```
-
-I'm some filler text, you should replace me with more meaningful text...
-
-```{r cor-star}
-
-```
-Add your explanation here—what did you notice?
-
+star_data %>%
+  summarize(r = cor(x, y))
+# r of the star dataset is -0.0630, |r| is smaller than the r of dino. but still close to 0, no linear relationship between x and y in star dataset
 
 ### Exercise 4
 
