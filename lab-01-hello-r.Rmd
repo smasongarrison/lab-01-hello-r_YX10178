@@ -20,11 +20,10 @@ library(datasauRus)
 
 ## Exercises
 
-### Exercise 1 Based on the help file, how many rows and how many columns does the datasaurus_dozen file have? What are the variables included in the data frame? Add your responses to your lab report.
+### Exercise 1 
 ?datasaurus_dozen
 nrow(datasaurus_dozen)
 ncol(datasaurus_dozen)
-
 # based on the help file, there are 1846 rows and 3 columns in the datasaurus_dozen file. 
 # the 3 variables are: dataset, x, y 
 
@@ -32,32 +31,17 @@ datasaurus_dozen %>%
   count(dataset) %>%
   print()
 
-### Exercise 2 Plot y vs. x for the dino dataset. Then, calculate the correlation coefficient between x and y for this dataset.
+### Exercise 2 
 
-# Start with the datasaurus_dozen and pipe it into the filter function to filter for observations where dataset == "dino". Store the resulting filtered data frame as a new data frame called dino_data.
 dino_data <- datasaurus_dozen %>%
   filter(dataset == "dino")
 
-#we need to visualize these data. let's plot the data in the dino dataset:
-
-```{r plot-dino, fig.height=3, fig.width=6}
 ggplot(data = dino_data, mapping = aes(x = x, y = y)) +
   geom_point()
-```
 
-#Next, let's calculate the correlation between `x` and `y` in this dataset:
-# Correlation coefficient, often referred to as r in statistics, measures the linear association between two variables.
-# You will see that some of the pairs of variables we plot do not have a linear relationship between them. This nonlinear relationships are exactly why we want to visualize first: visualize to assess the form of the relationship, and calculate r only if relevant. 
-# In this case, calculating a correlation coefficient really doesn’t make sense since the relationship between x and y is definitely not linear – it’s dinosaurial!
-# But, for illustrative purposes, let’s calculate the correlation coefficient between x and y
-
-```{r cor-dino}
 dino_data %>%
   summarize(r = cor(x, y))
-```
-# r = -0.06447185, which is close to 0. there is no linear relationship between x and y. 
-
-
+# r = -0.0645, which is close to 0. there is no linear relationship between x and y. 
 ### Exercise 3
 
 This is your turn to write the code and narrative for the star dataset. Follow the same steps as above to complete the analysis. Don't forget to label your chunks appropriately!
