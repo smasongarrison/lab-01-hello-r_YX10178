@@ -4,8 +4,7 @@ author: "Yuxin Xie"
 date: "1/22/2025"
 output: 
   html_document: 
-    fig_height: 4
-    fig_width: 9
+    fig_height: 8
 ---
 
 ## Load packages and data
@@ -33,7 +32,7 @@ datasaurus_dozen %>%
 
 
 ### Exercise 2 
-```{r plot-dino, fig.height=3, fig.width=6}
+```{r plot-dino, fig.height=5, fig.width=5}
 dino_data <- datasaurus_dozen %>%
   filter(dataset == "dino")
 
@@ -49,7 +48,7 @@ dino_data %>%
 
 
 ### Exercise 3
-```{r plot-star}
+```{r plot-star, fig.height=5, fig.width=5}
 star_data <- datasaurus_dozen %>%
   filter(dataset == "star")
 
@@ -65,7 +64,7 @@ star_data %>%
 
 
 ### Exercise 4
-```{r plot-circle}
+```{r plot-circle, fig.height=4, fig.width=5}
 circle_data <- datasaurus_dozen %>%
   filter(dataset == "circle")
 
@@ -83,7 +82,7 @@ circle_data %>%
 ### Exercise 5
 
 #Finally, let’s plot all datasets at once. In order to do this, we will make use of faceting.
-```{r plot-all}
+```{r plot-all, fig.height=7, fig.width=5}
 ggplot(datasaurus_dozen, aes(x = x, y = y, color = dataset)) +
   geom_point() +
   facet_wrap(~dataset, ncol = 3) +
