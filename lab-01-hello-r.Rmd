@@ -18,7 +18,7 @@ library(datasauRus)
 ## Exercises
 
 ### Exercise 1
-?datasaurus_dozen
+??datasaurus_dozen
 
 #based on the help file, there are 
 
