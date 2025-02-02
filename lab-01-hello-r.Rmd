@@ -9,10 +9,11 @@ output:
 
 ## Load packages and data
 
-install.packages("tidyverse")
-install.packages("datasauRus")
 
 ```{r load-packages, message=FALSE}
+#install.packages("tidyverse")
+#install.packages("datasauRus")
+
 library(tidyverse) 
 library(datasauRus)
 ```
@@ -20,16 +21,20 @@ library(datasauRus)
 ## Exercises
 
 ### Exercise 1 
-?datasaurus_dozen
-nrow(datasaurus_dozen)
-ncol(datasaurus_dozen)
-# based on the help file, there are 1846 rows and 3 columns in the datasaurus_dozen file. 
-# the 3 variables are: dataset, x, y 
 
+```{r load-datasaurus}
+# ?datasaurus_dozen
+nrow(datasaurus_dozen)
+
+```
+
+based on the help file, there are 1846 rows and 3 columns in the datasaurus_dozen file. The ``r ncol(datasaurus_dozen)`` variables are: dataset, x, y 
+
+```{r count-dataset}
 datasaurus_dozen %>%
   count(dataset) %>%
   print()
-
+```
 
 ### Exercise 2 
 ```{r plot-dino, fig.height=5, fig.width=5}
@@ -76,12 +81,13 @@ ggplot(data = circle_data, mapping = aes(x = x, y = y)) +
 circle_data %>%
   summarize(r = cor(x, y))
 ```
-# r of the star dataset is -0.0683, |r| is larger than the r of dino. but still close to 0, no linear relationship between x and y in circle dataset
+
+ r of the star dataset is -0.0683, |r| is larger than the r of dino. but still close to 0, no linear relationship between x and y in circle dataset
 
 
 ### Exercise 5
 
-#Finally, let’s plot all datasets at once. In order to do this, we will make use of faceting.
+ Finally, let’s plot all datasets at once. In order to do this, we will make use of faceting.
 ```{r plot-all, fig.height=7, fig.width=5}
 ggplot(datasaurus_dozen, aes(x = x, y = y, color = dataset)) +
   geom_point() +
